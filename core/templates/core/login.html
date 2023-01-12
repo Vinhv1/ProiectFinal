@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<main class="flex items-center justify-center h-screen">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="bg-white w-96 p-6 rounded shadow-md">
+            <div class="flex items-center justify-center mb-4">
+                <img src="data:image/png;base64,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" class="h-32" />
+            </div>
+            <label class="text-gray-800">Username</label>
+            <input type="text" name="username" class="w-full py-2 bg-gray-100 text-gray-600 px-1 outline-none mb-4"/>
+            <label class="text-gray-800">Password</label>
+            <input type="password" name="password" class="w-full py-2 bg-gray-100 text-gray-600 px-1 outline-none mb-4"/>
+            <button type="submit" class="bg-purple-800 w-full text-gray-100 py-2 rounded hover:bg-cyan-800 transition-colors">Login</button>
+        </div>
+    </form>
+</main>
+
+{% endblock %}
+
